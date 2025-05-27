@@ -47,6 +47,20 @@ func (s *Service) Get(id string) (*models.Transaction, error) {
 	return result, nil
 }
 
+// GetByExternalID retrieves a transaction by its external ID
+func (s *Service) GetByExternalID(externalID string) (*models.Transaction, error) {
+	result := &models.Transaction{}
+
+	// Endpoint placeholder - should be updated when documentation is available
+	path := fmt.Sprintf("/v1/transactions/external/%s", externalID)
+	err := s.client.DoRequest(http.MethodGet, path, nil, result)
+	if err != nil {
+		return nil, fmt.Errorf("error getting transaction by external ID %s: %w", externalID, err)
+	}
+
+	return result, nil
+}
+
 // Create creates a new transaction
 func (s *Service) Create(params *models.TransactionCreateParams) (*models.Transaction, error) {
 	result := &models.Transaction{}
