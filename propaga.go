@@ -19,8 +19,8 @@ type Client struct {
 }
 
 // NewClient creates a new instance of the Propaga client with default configuration
-func NewClient(apiKey string) *Client {
-	httpClient := client.NewClient(apiKey)
+func NewClient(apiKey string, staging bool) *Client {
+	httpClient := client.NewClient(apiKey, staging)
 	return newClientWithHTTPClient(httpClient)
 }
 

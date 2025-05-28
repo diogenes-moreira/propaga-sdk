@@ -33,9 +33,13 @@ type Client struct {
 }
 
 // NewClient creates a new instance of the Propaga client
-func NewClient(apiKey string) *Client {
+func NewClient(apiKey string, isStaging bool) *Client {
+	url := DefaultBaseURL
+	if isStaging {
+		url = StagingBaseURL
+	}
 	return &Client{
-		BaseURL: DefaultBaseURL,
+		BaseURL: url,
 		HTTPClient: &http.Client{
 			Timeout: DefaultTimeout,
 		},

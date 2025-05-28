@@ -25,7 +25,7 @@ func (s *Service) List(params *models.TransactionListParams) (*models.Transactio
 	result := &models.TransactionListResponse{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	err := s.client.DoRequest(http.MethodGet, "/v1/transactions", params, result)
+	err := s.client.DoRequest(http.MethodGet, "/v1/transaction", params, result)
 	if err != nil {
 		return nil, fmt.Errorf("error listing transactions: %w", err)
 	}
@@ -38,7 +38,7 @@ func (s *Service) Get(id string) (*models.Transaction, error) {
 	result := &models.Transaction{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/transactions/%s", id)
+	path := fmt.Sprintf("/v1/transaction/%s", id)
 	err := s.client.DoRequest(http.MethodGet, path, nil, result)
 	if err != nil {
 		return nil, fmt.Errorf("error getting transaction %s: %w", id, err)
@@ -52,7 +52,7 @@ func (s *Service) GetByExternalID(externalID string) (*models.Transaction, error
 	result := &models.Transaction{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/transactions/external/%s", externalID)
+	path := fmt.Sprintf("/v1/transaction/external/%s", externalID)
 	err := s.client.DoRequest(http.MethodGet, path, nil, result)
 	if err != nil {
 		return nil, fmt.Errorf("error getting transaction by external ID %s: %w", externalID, err)
@@ -66,7 +66,7 @@ func (s *Service) Create(params *models.TransactionCreateParams) (*models.Transa
 	result := &models.Transaction{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	err := s.client.DoRequest(http.MethodPost, "/v1/transactions", params, result)
+	err := s.client.DoRequest(http.MethodPost, "/v1/transaction", params, result)
 	if err != nil {
 		return nil, fmt.Errorf("error creating transaction: %w", err)
 	}

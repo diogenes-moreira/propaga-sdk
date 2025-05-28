@@ -14,7 +14,7 @@ import (
 func main() {
 	// NewClient creates and returns a new Propaga SDK client.
 	// It requires an API key to authenticate API requests.
-	client := propaga.NewClient("your_api_key_here")
+	client := propaga.NewClient("your_api_key_here", false) // Set to true for staging environment
 
 	// Example 1: List transactions
 	// This example retrieves a list of transactions using the List method.
