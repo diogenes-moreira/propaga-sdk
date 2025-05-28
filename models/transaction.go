@@ -10,8 +10,8 @@ type Transaction struct {
 	TransactionStatus        string    `json:"transactionStatus"`
 	WholesalerTransactionId  string    `json:"wholesalerTransactionId"`
 	MovementDate             time.Time `json:"movementDate"`
-	TotalAmount              int       `json:"totalAmount"`
-	WholesalerFees           int       `json:"wholesalerFees"`
+	TotalAmount              float64   `json:"totalAmount"`
+	WholesalerFees           float64   `json:"wholesalerFees"`
 	Interests                float64   `json:"interests"`
 	IVAAmount                float64   `json:"IVAAmount"`
 	TotalAmountWithInterests float64   `json:"totalAmountWithInterests"`
