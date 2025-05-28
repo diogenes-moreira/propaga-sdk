@@ -58,12 +58,12 @@ type TransactionListParams struct {
 
 // TransactionCreateParams represents the parameters for creating a transaction
 type TransactionCreateParams struct {
-	Amount        float64                `json:"amount"`
-	Currency      string                 `json:"currency"`
-	CustomerID    string                 `json:"customer_id"`
-	Description   string                 `json:"description,omitempty"`
-	PaymentMethod string                 `json:"payment_method,omitempty"`
-	Metadata      map[string]interface{} `json:"metadata,omitempty"`
+	CornerStoreId           string                 `json:"cornerStoreId"`
+	TotalAmount             int                    `json:"totalAmount"`
+	WholesalerTransactionId string                 `json:"wholesalerTransactionId"`
+	DeliveryDate            string                 `json:"deliveryDate"`
+	Products                []Product              `json:"products"`
+	Metadata                map[string]interface{} `json:"metadata,omitempty"`
 }
 
 // TransactionUpdateParams represents the parameters for updating a transaction
