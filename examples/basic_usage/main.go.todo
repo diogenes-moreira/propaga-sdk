@@ -36,7 +36,7 @@ func main() {
 	fmt.Printf("Found %d transactions\n", transactions.TotalCount)
 	for i, tx := range transactions.Data {
 		fmt.Printf("%d. ID: %s, Amount: %.2f %s, Status: %s\n",
-			i+1, tx.ID, tx.Amount, tx.Currency, tx.Status)
+			i+1, tx.TransactionId, tx.TotalAmount, tx., tx.Status)
 	}
 
 	// Example 2: Get a specific transaction

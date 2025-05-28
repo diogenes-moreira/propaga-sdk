@@ -59,7 +59,7 @@ type TransactionListParams struct {
 // TransactionCreateParams represents the parameters for creating a transaction
 type TransactionCreateParams struct {
 	CornerStoreId           string                 `json:"cornerStoreId"`
-	TotalAmount             int                    `json:"totalAmount"`
+	TotalAmount             float64                `json:"totalAmount"`
 	WholesalerTransactionId string                 `json:"wholesalerTransactionId"`
 	DeliveryDate            string                 `json:"deliveryDate"`
 	Products                []Product              `json:"products"`
