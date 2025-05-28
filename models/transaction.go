@@ -68,9 +68,12 @@ type TransactionCreateParams struct {
 
 // TransactionUpdateParams represents the parameters for updating a transaction
 type TransactionUpdateParams struct {
-	Status      string                 `json:"status,omitempty"`
-	Description string                 `json:"description,omitempty"`
-	Metadata    map[string]interface{} `json:"metadata,omitempty"`
+	Status              string                 `json:"status,omitempty"`
+	TransactionAmount   float64                `json:"transactionAmount,omitempty"`
+	Latitude            float64                `json:"latitude,omitempty"`
+	Longitude           float64                `json:"longitude,omitempty"`
+	LocationDescription string                 `json:"locationDescription,omitempty"`
+	Metadata            map[string]interface{} `json:"metadata,omitempty"`
 }
 
 // TransactionListResponse represents the response when listing transactions
