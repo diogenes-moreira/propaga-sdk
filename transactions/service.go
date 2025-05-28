@@ -79,7 +79,7 @@ func (s *Service) Update(id string, params *models.TransactionUpdateParams) (*mo
 	result := &models.Transaction{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/transactions/%s", id)
+	path := fmt.Sprintf("/v1/transaction/%s", id)
 	err := s.client.DoRequest(http.MethodPut, path, params, result)
 	if err != nil {
 		return nil, fmt.Errorf("error updating transaction %s: %w", id, err)
@@ -93,7 +93,7 @@ func (s *Service) Cancel(id string) (*models.Transaction, error) {
 	result := &models.Transaction{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/transactions/%s/cancel", id)
+	path := fmt.Sprintf("/v1/transaction/%s/cancel", id)
 	err := s.client.DoRequest(http.MethodPost, path, nil, result)
 	if err != nil {
 		return nil, fmt.Errorf("error canceling transaction %s: %w", id, err)
