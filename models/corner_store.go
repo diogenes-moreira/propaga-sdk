@@ -71,8 +71,8 @@ type CornerStoreListResponse struct {
 }
 
 type CornerStoreInfo struct {
-	UserId               string `json:"userId"`
-	CornerStoreId        string `json:"cornerStoreId"`
-	Status               string `json:"status"`
-	CreditLimitAvailable int    `json:"creditLimitAvailable"`
+	UserId               string  `json:"userId"`
+	CornerStoreId        string  `json:"cornerStoreId"`
+	Status               string  `json:"status"`
+	CreditLimitAvailable float64 `json:"creditLimitAvailable"`
 }
