@@ -90,3 +90,8 @@ type APIError struct {
 	Message string `json:"message"`
 	Details string `json:"details,omitempty"`
 }
+
+type TransactionLink struct {
+	Link          string `json:"link"`
+	TransactionId string `json:"transactionId"`
+}
