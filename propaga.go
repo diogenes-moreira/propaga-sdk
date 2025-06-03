@@ -1,6 +1,8 @@
 package propaga
 
 import (
+	"github.com/diogenes-moreira/propaga-sdk/cornerstore"
+	"github.com/diogenes-moreira/propaga-sdk/kyc"
 	"time"
 
 	"github.com/diogenes-moreira/propaga-sdk/auth"
@@ -16,6 +18,8 @@ type Client struct {
 	// Available services
 	Auth         *auth.Service
 	Transactions *transactions.Service
+	CornerStores *cornerstore.Service
+	KYC          *kyc.Service
 }
 
 // NewClient creates a new instance of the Propaga client with default configuration
@@ -39,6 +43,7 @@ func newClientWithHTTPClient(httpClient *client.Client) *Client {
 	// Initialize services
 	c.Auth = auth.NewService(httpClient)
 	c.Transactions = transactions.NewService(httpClient)
-
+	c.CornerStores = cornerstore.NewService(httpClient)
+	c.KYC = kyc.NewService(httpClient)
 	return c
 }
