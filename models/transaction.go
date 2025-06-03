@@ -99,7 +99,7 @@ type TransactionLinkResponse struct {
 type TransactionLinkParams struct {
 	Transaction struct {
 		CornerStoreId           string                 `json:"cornerStoreId"`
-		TotalAmount             int                    `json:"totalAmount"`
+		TotalAmount             float64                `json:"totalAmount"`
 		WholesalerTransactionId string                 `json:"wholesalerTransactionId"`
 		Products                []Product              `json:"products"`
 		Metadata                map[string]interface{} `json:"metadata,omitempty"`
