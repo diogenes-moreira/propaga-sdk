@@ -25,7 +25,7 @@ func (s *Service) List(params *models.CornerStoreListParams) (*models.CornerStor
 	result := &models.CornerStoreListResponse{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	err := s.client.DoRequest(http.MethodGet, "/v1/corner-stores", params, result)
+	err := s.client.DoRequest(http.MethodGet, "/v1/corner-store", params, result)
 	if err != nil {
 		return nil, fmt.Errorf("error listing corner stores: %w", err)
 	}
@@ -38,7 +38,7 @@ func (s *Service) Get(id string) (*models.CornerStore, error) {
 	result := &models.CornerStore{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/corner-stores/%s", id)
+	path := fmt.Sprintf("/v1/corner-store/%s", id)
 	err := s.client.DoRequest(http.MethodGet, path, nil, result)
 	if err != nil {
 		return nil, fmt.Errorf("error getting corner store %s: %w", id, err)
@@ -52,7 +52,7 @@ func (s *Service) Create(params *models.CornerStoreCreateParams) (*models.Corner
 	result := &models.CornerStore{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	err := s.client.DoRequest(http.MethodPost, "/v1/corner-stores", params, result)
+	err := s.client.DoRequest(http.MethodPost, "/v1/corner-store", params, result)
 	if err != nil {
 		return nil, fmt.Errorf("error creating corner store: %w", err)
 	}
@@ -65,7 +65,7 @@ func (s *Service) Update(id string, params *models.CornerStoreUpdateParams) (*mo
 	result := &models.CornerStore{}
 
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/corner-stores/%s", id)
+	path := fmt.Sprintf("/v1/corner-store/%s", id)
 	err := s.client.DoRequest(http.MethodPut, path, params, result)
 	if err != nil {
 		return nil, fmt.Errorf("error updating corner store %s: %w", id, err)
@@ -77,7 +77,7 @@ func (s *Service) Update(id string, params *models.CornerStoreUpdateParams) (*mo
 // Delete deletes a corner store
 func (s *Service) Delete(id string) error {
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/corner-stores/%s", id)
+	path := fmt.Sprintf("/v1/corner-store/%s", id)
 	err := s.client.DoRequest(http.MethodDelete, path, nil, nil)
 	if err != nil {
 		return fmt.Errorf("error deleting corner store %s: %w", id, err)
@@ -88,7 +88,7 @@ func (s *Service) Delete(id string) error {
 
 func (s *Service) GetCornerStoreInfoByExternalId(id int) (*models.CornerStoreInfo, error) {
 	// Endpoint placeholder - should be updated when documentation is available
-	path := fmt.Sprintf("/v1/corner-stores/external/%d", id)
+	path := fmt.Sprintf("/v1/corner-store/external/%d", id)
 	result := &models.CornerStoreInfo{}
 	err := s.client.DoRequest(http.MethodGet, path, nil, result)
 	if err != nil {
