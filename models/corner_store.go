@@ -69,3 +69,10 @@ type CornerStoreListResponse struct {
 	Limit      int           `json:"limit"`
 	Offset     int           `json:"offset"`
 }
+
+type CornerStoreInfo struct {
+	UserId               string `json:"userId"`
+	CornerStoreId        string `json:"cornerStoreId"`
+	Status               string `json:"status"`
+	CreditLimitAvailable int    `json:"creditLimitAvailable"`
+}

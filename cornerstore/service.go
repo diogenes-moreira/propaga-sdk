@@ -85,3 +85,16 @@ func (s *Service) Delete(id string) error {
 
 	return nil
 }
+
+func (s *Service) GetCornerStoreInfoByExternalId(id int) (*models.CornerStoreInfo, error) {
+	// Endpoint placeholder - should be updated when documentation is available
+	path := fmt.Sprintf("/v1/corner-stores/external/%d", id)
+	result := &models.CornerStoreInfo{}
+	err := s.client.DoRequest(http.MethodGet, path, nil, result)
+	if err != nil {
+		return nil, fmt.Errorf("error getting corner store info by external ID %d: %w", id, err)
+	}
+
+	return result, nil
+
+}
