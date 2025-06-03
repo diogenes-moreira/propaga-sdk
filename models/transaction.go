@@ -91,7 +91,17 @@ type APIError struct {
 	Details string `json:"details,omitempty"`
 }
 
-type TransactionLink struct {
+type TransactionLinkResponse struct {
 	Link          string `json:"link"`
 	TransactionId string `json:"transactionId"`
+}
+
+type TransactionLinkParams struct {
+	Transaction struct {
+		CornerStoreId           string                 `json:"cornerStoreId"`
+		TotalAmount             int                    `json:"totalAmount"`
+		WholesalerTransactionId string                 `json:"wholesalerTransactionId"`
+		Products                []Product              `json:"products"`
+		Metadata                map[string]interface{} `json:"metadata,omitempty"`
+	} `json:"transaction"`
 }

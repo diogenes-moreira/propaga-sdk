@@ -104,8 +104,8 @@ func (s *Service) Cancel(id string) (*models.Transaction, error) {
 
 // CreateTransactionLink creates a transaction link for an external ID
 // This method is used to generate a link for external transactions, such as those from a wholesaler
-func (s *Service) CreateTransactionLink(id string, params *models.TransactionCreateParams) (*models.TransactionLink, error) {
-	result := &models.TransactionLink{}
+func (s *Service) CreateTransactionLink(id string, params *models.TransactionLinkParams) (*models.TransactionLinkResponse, error) {
+	result := &models.TransactionLinkResponse{}
 
 	path := fmt.Sprintf("/v1/link/external/%s", id)
 	err := s.client.DoRequest(http.MethodPost, path, params, result)
