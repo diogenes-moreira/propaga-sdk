@@ -115,3 +115,17 @@ func (s *Service) CreateTransactionLink(id string, params *models.TransactionLin
 
 	return result, nil
 }
+
+func (s *Service) GetPendingTransactions() (*models.PendingTransactionsResponse, error) {
+
+	result := &models.PendingTransactionsResponse{}
+
+	// Endpoint placeholder - should be updated when documentation is available
+	err := s.client.DoRequest(http.MethodGet, "/v1/transaction/pending", nil, result)
+	if err != nil {
+		return nil, fmt.Errorf("error getting pending transactions %w", err)
+	}
+
+	return result, nil
+
+}

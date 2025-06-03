@@ -105,3 +105,17 @@ type TransactionLinkParams struct {
 		Metadata                map[string]interface{} `json:"metadata,omitempty"`
 	} `json:"transaction"`
 }
+
+type PendingTransactionsResponse struct {
+	Transactions []struct {
+		Id                       string    `json:"id"`
+		CornerStoreId            string    `json:"cornerStoreId"`
+		WholesalerTransactionId  string    `json:"wholesalerTransactionId"`
+		TotalAmount              float64   `json:"totalAmount"`
+		Interests                float64   `json:"interests"`
+		IVAAmount                float64   `json:"IVAAmount"`
+		TotalAmountWithInterests float64   `json:"totalAmountWithInterests"`
+		MovementDate             time.Time `json:"movementDate"`
+		DeliveryDate             time.Time `json:"deliveryDate"`
+	} `json:"transactions"`
+}
